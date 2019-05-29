@@ -1,17 +1,11 @@
-function data = readall_txt(path)
-A = dir(fullfile(path,'*.txt'));
-% 读取后A的格式为? ?? ?
-%? ?? ?? ?? ?? ?? ? name??-- filename
-%? ?? ?? ?? ?? ?? ? date??-- modification date
-%? ?? ?? ?? ?? ?? ? bytes   -- number of bytes allocated to the file
-%? ?? ?? ?? ?? ?? ? isdir   -- 1 if name is a directory and 0 if not
-A = struct2cell(A);
-num = size(A);
-for k =0:num(2)-1
-	x(k+1) = A(6*k+1);% 找出name序列
+function [data, name] = readall_txt(path)
+A = dir(fullfile(path,'*.txt'));% 读取目录
+A = struct2cell(A);% 转化元胞数组 方便读取size
+[~,num] = size(A);
+for k =0:num-1
+	name(k+1) = A(6*k+1);% 找出name序列
 end
-for k = 1:num(2)
-	newpath = strcat(path,'\',x(k));
-	data{k} = load(char(newpath));
+for k = 1:num
+	newpath = strcat(path,'\',name(k));
+	data{k} = load(char(newpath));% 获取数据
 end
-% [EOF] readall_txt.m
