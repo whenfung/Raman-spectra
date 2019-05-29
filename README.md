@@ -26,7 +26,7 @@ addition method:Sample
    将列向量 a 读到一个数组，b 读到一个数组，然后将 a 作为横坐标，b 作为纵坐标进行画图。
 
    ```matlab
-filename = dir(fullfile('..\data\试剂标准品谱图','*.txt'));
+	filename = dir(fullfile('..\data\试剂标准品谱图','*.txt'));
    filename(1)
    ```
    
@@ -34,5 +34,5 @@ filename = dir(fullfile('..\data\试剂标准品谱图','*.txt'));
 
    混合样测试文件夹里有 15 个 `txt` 文件，利用同样的方式将变量 a 和 b 读取出来。
    
-   注意：`txt` 里的 c/d/e/f 变量都是没用了，不用管
+   注意：`txt` 里的 c/d/e/f 变量都是没用了，不用管。
 
