@@ -26,7 +26,7 @@ addition method:Sample
    将列向量 a 读到一个数组，b 读到一个数组，然后将 a 作为横坐标，b 作为纵坐标进行画图。
 
    ```matlab
-	filename = dir(fullfile('..\data\试剂标准品谱图','*.txt'));
+   filename = dir(fullfile('..\data\试剂标准品谱图','*.txt'));
    filename(1)
    ```
    
