@@ -1,4 +1,4 @@
-function [data, name] = readall_txt(path)
+function [data, name, num] = readall_txt(path)
 A = dir(fullfile(path,'*.txt'));% 读取目录
 A = struct2cell(A);% 转化元胞数组 方便读取size
 [~,num] = size(A);
