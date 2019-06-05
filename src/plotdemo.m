@@ -1,4 +1,4 @@
-clear;clc
+clear;clc;close all;
 [data1,name1,num1] = readall_txt('..\data\试剂标准品谱图');
 [data2,name2,num2] = readall_txt('..\data\混合样测试');
 for i = 1:num1
