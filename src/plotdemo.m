@@ -4,9 +4,11 @@ clear;clc;close all;
 num = 1;
 for i = 1:num1
     temp = cell2mat(data1(i));
-    [~,loc] = findpeaks(temp(:,2));
-    [dim,~] = size(loc);
-    pks(num) = mat2cell(loc,dim,1);
+    [peak,loc] = findpeaks(temp(:,2));
+    [b,index] = sort(peak);
+    [dim,~] = size(peak);
+    tmp = loc(index(dim-9:dim));
+    pks(num) = mat2cell(tmp,10,1);
     num = num + 1;
     plot(temp(:,1),temp(:,2))
     name1(i) = strrep(name1(i),'.txt','');
@@ -19,9 +21,11 @@ legend(name1);
 
 for i = 1:num2
     temp = cell2mat(data2(i));
-    [~,loc] = findpeaks(temp(:,2));
-    [dim,~] = size(loc);
-    pks(num) = mat2cell(loc,dim,1);
+    [peak,loc] = findpeaks(temp(:,2));
+    [b,index] = sort(peak);
+    [dim,~] = size(peak);
+    tmp = loc(index(dim-9:dim));
+    pks(num) = mat2cell(tmp,10,1);
     num = num + 1;
     name2(i) = strrep(name2(i),'.txt','');
     figure;
@@ -31,7 +35,6 @@ for i = 1:num2
         if(contains(name2(i),name1(j)))
             temp = cell2mat(data1(j));
             plot(temp(:,1),temp(:,2),'DisplayName',char(name1(j)));
-            [~,loc] = findpeaks(temp(:,2));
         end
     end
     xlabel('²¨Êý');
