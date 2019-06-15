@@ -36,7 +36,7 @@ for i = 1:num2
     [b,bint,r,rint,s] = regress(y,X);
     b = b(2:length(b));
     b(:,2) = 1:length(b);
-    b = sortrows(b,1,'descend');
+    b = sortrows(b,1,'descend')
     plot(data1{cf1(b(1,2)+1)}(:,1),data1{cf1(b(1,2)+1)}(:,2),'DisplayName',name1{cf1(b(1,2)+1)});
     plot(data1{cf1(b(2,2)+1)}(:,1),data1{cf1(b(2,2)+1)}(:,2),'DisplayName',name1{cf1(b(2,2)+1)});
     legend;
