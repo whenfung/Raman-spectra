@@ -13,7 +13,7 @@ for i = 1:num2
         if(contains(name2{i},name1{j}))
 %             plot(data1{j}(:,1),data1{j}(:,2),'DisplayName',name1{j});
             k = strfind(name2{i},name1{j});
-            a = str2num(name2{i}(k+length(name1{j}):k+1+length(name1{j})))/100;
+            a = str2double(name2{i}(k+length(name1{j}):k+1+length(name1{j})))/100;
             sum = sum + data1{j}(:,2)*a;
 %             plot(data1{j}(:,1),data1{j}(:,2)*a,'DisplayName',strcat(name1{j},num2str(a)));
         end
