@@ -3,8 +3,8 @@ function [result1, name1, num1, result2, name2, num2] = extract()
     [data2,name2,num2] = readall_txt('..\data\混合样测试');
     
     % 试剂峰值提取
-    N = 15;
-    Q = 2500;
+    N = 10;
+    Q = 2000;
     result1 = cell(1, num1);
     for i = 1:num1
         peaks = zeros(1,2);
@@ -24,7 +24,7 @@ function [result1, name1, num1, result2, name2, num2] = extract()
     end
 
     % 混合物峰值提取
-    N1 = 10;
+    N1 = 3;
     Q1 = 1000;
     result2 = cell(1, num2);
     for i = 1:num2

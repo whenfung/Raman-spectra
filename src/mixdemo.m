@@ -18,7 +18,7 @@ for i = 1:num2
 %             plot(data1{j}(:,1),data1{j}(:,2)*a,'DisplayName',strcat(name1{j},num2str(a)));
         end
     end
-    plot(data1{j}(:,1),sum*1.5,'DisplayName','混合后');
+    plot(data1{j}(:,1),sum,'DisplayName','混合后');
     xlabel('波数');
     ylabel('光强');
     legend;
