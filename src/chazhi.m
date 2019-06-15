@@ -16,18 +16,29 @@ for i = 1:num2
     plot(data2{i}(:,1),data2{i}(:,2),'DisplayName',name2{i});
     hold on;
     y = datacell{i}(:,2);             % y
+    for j = 1:length(y)
+        if y(j) < 500
+            y(j) = 0;
+        end
+    end
     X = ones(length(y),1);            % [ones(n,1), X]
     cf1 = cf{i};                      % 成分的索引
     for j = 1:cf1(1)                  % 所有成分 
 %         plot(data1{cf1(j+1)}(:,1),data1{cf1(j+1)}(:,2),'DisplayName',name1{cf1(j+1)});
         x = data1{cf1(j+1)}(:,2);     % 第一种成分
+        for k = 1: length(x)
+            if x(k) < 500 
+                x(k) = 0;
+            end
+        end
         X = [X, x];                   % 拼接   
     end
     [b,bint,r,rint,s] = regress(y,X);
+    b = b(2:length(b));
     b(:,2) = 1:length(b);
     b = sortrows(b,1,'descend');
-    plot(data1{cf1(b(1,2))}(:,1),data1{cf1(b(1,2))}(:,2),'DisplayName',name1{cf1(b(1,2))});
-    plot(data1{cf1(b(2,2))}(:,1),data1{cf1(b(2,2))}(:,2),'DisplayName',name1{cf1(b(2,2))});
+    plot(data1{cf1(b(1,2)+1)}(:,1),data1{cf1(b(1,2)+1)}(:,2),'DisplayName',name1{cf1(b(1,2)+1)});
+    plot(data1{cf1(b(2,2)+1)}(:,1),data1{cf1(b(2,2)+1)}(:,2),'DisplayName',name1{cf1(b(2,2)+1)});
     legend;
 end
 
