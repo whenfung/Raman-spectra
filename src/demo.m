@@ -9,7 +9,7 @@ end
 title('拉曼光谱(标准)');
 xlabel('波数');
 ylabel('光强');
-legend(name1);
+legend(name1());
 
 for i = 1:num2
     name2(i) = strrep(name2(i),'.txt','');

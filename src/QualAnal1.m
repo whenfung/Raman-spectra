@@ -1,6 +1,7 @@
 clear;clc;close all;
 [data1,name1,num1] = readall_txt('..\data\ÊÔ¼ÁÊý¾Ý¿â\ÊÔ¼Á±ê×¼Æ·Æ×Í¼'); % »ñÈ¡ÊÔ¼ÁÊý¾Ý¿âÄÚÈÝ
 [data2,name2,num2] = readall_txt('..\data\ÊÔ¼ÁÊý¾Ý¿â\»ìºÏÑù²âÊÔ');     % »ñÈ¡»ìºÏÎï·åÖµ
+% [data1, name1, num1, data2, name2, num2] = extract();
 for i = 1:num2                                                       % Õë¶ÔÃ¿Ò»ÖÖ»ìºÏÎïÑ­»·
     temp1 = sortrows(data2{i},2,'descend');                          % »ñÈ¡µ±Ç°»ìºÏÎïÊý¾Ý²¢ÒÔ×Ý×ø±ê(¹âÇ¿)½µÐòÅÅÐò
     temp1 = temp1(:,1);                                              % È¡¶ÔÓ¦µÄºá×ø±ê
@@ -20,7 +21,7 @@ for i = 1:num2                                                       % Õë¶ÔÃ¿Ò»Ö
                 end
             end
         end
-        if (count == length(temp2))
+        if (count >= length(temp2))
             plot(data1{k}(:,1),data1{k}(:,2),'o','DisplayName',char(strrep(name1(k),'.txt','')));
         end
     end
