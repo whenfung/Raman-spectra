@@ -1,3 +1,6 @@
+% 1. 将所有纯净物的光谱画到一张图上
+% 2. 将混合物与其成分各自打印到一张图上
+
 clear;clc;close all;
 [data1,name1,num1] = readall_txt('..\data\试剂标准品谱图');
 [data2,name2,num2] = readall_txt('..\data\混合样测试');

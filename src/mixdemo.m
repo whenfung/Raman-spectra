@@ -1,3 +1,5 @@
+% y = ax+by 进行混合打印出所有的混合物图像和给出的数据进行比较
+
 clear;clc;close all;
 [data1,name1,num1] = readall_txt('..\data\试剂标准品谱图');
 [data2,name2,num2] = readall_txt('..\data\混合样测试');

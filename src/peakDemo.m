@@ -1,3 +1,5 @@
+% 将 cd 段的数据打印出来，发现是峰值趋势图
+
 clear;clc;close all;
 [data1,name1,num1] = readall_txt('..\data\峰值\试剂标准品谱图');
 [data2,name2,num2] = readall_txt('..\data\峰值\混合样测试');

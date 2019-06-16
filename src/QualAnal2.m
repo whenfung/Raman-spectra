@@ -1,3 +1,5 @@
+% 利用峰值的横坐标匹配找到混合物的可能成分。
+
 clear;clc;close all;
 [data1, name1, num1, data2, name2, num2] = extract();
 cf = cell(15,1);

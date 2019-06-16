@@ -1,3 +1,5 @@
+% 人工智能找到所有的峰值进行特征峰匹配
+
 clear;clc;close all;
 [data1,name1,num1] = readall_txt('..\data\试剂数据库\试剂标准品谱图'); % 获取试剂数据库内容
 [data2,name2,num2] = readall_txt('..\data\试剂数据库\混合样测试');     % 获取混合物峰值

@@ -1,3 +1,5 @@
+% 利用 cd 段的峰值趋势图匹配成分
+
 clear;clc;close all;
 [data1,name1,num1] = readall_txt('..\data\峰值\试剂标准品谱图');%获取峰值数据
 [data2,name2,num2] = readall_txt('..\data\峰值\混合样测试');
