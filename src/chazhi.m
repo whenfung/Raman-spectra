@@ -65,7 +65,7 @@ for i = 1:num2
     for  j = 2:cf{i}(1)+1;
         plot(data1{cf{i}(j)}(:,1),data1{cf{i}(j)}(:,2),'DisplayName',name1{cf{i}(j)});
     end
-    bili{i}(2:length(bili{i}))
+    bili{i}(2:length(bili{i})) 
     legend;
 end
 
