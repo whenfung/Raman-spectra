@@ -44,7 +44,7 @@ for times = 1:3
         end
 
         % ¹ýÂË³É·Ö
-        cf2 = zeros(1,length(cf1));
+        cf2 = zeros(1,cf1(1));
         for j = 2:length(b)
             if b(j) > 0.1 && b(j)/sum > 0.05
                 cf2(1) = cf2(1) +1;
@@ -65,7 +65,13 @@ for i = 1:num2
     for  j = 2:cf{i}(1)+1;
         plot(data1{cf{i}(j)}(:,1),data1{cf{i}(j)}(:,2),'DisplayName',name1{cf{i}(j)});
     end
-    bili{i}(2:length(bili{i})) 
     legend;
+end
+
+for i = 1:num2
+    sum = 0;
+    for j = 2:length(bili{i})
+        sum = sum + bili{i}(j);
+    end
 end
 
